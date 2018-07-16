@@ -1,15 +1,15 @@
-import {NativeModules} from 'react-native'
+import { NativeModules } from "react-native";
 
-const {RNAdyenCse} = NativeModules
+const { RNAdyenCse } = NativeModules;
 
 export const encrypt = (card, publicKey) => {
-  const {holderName, number, cvc, expiryMonth, expiryYear} = card
+  const { holderName, number, cvc, expiryMonth, expiryYear } = card;
   return RNAdyenCse.encrypt(
     holderName,
     number,
     cvc,
     expiryMonth,
     expiryYear,
-    publicKey,
-  )
-}
+    publicKey
+  );
+};
