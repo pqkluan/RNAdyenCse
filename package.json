@@ -1,17 +1,19 @@
 {
-  "name": "react-native-adyen-cse",
-  "version": "1.0.4",
-  "description": "React Native Adyen CSE",
+  "name": "react-native-adyen-cse-encrypt",
+  "version": "0.0.1",
+  "description": "React Native Adyen CSE Encrypt",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["adyen, adyencse, react-native"],
-  "author": "Peter A. Indiola <pindiola@gmail.com>",
+  "keywords": [
+    "adyen, react-native"
+  ],
+  "author": "",
   "license": "MIT",
   "peerDependencies": {},
   "dependencies": {
-    "npm": "^5.7.1"
+    "npm": "^6.2.0"
   },
   "repository": {
     "type": "git",
