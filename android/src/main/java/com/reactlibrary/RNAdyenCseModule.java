@@ -41,7 +41,7 @@ public class RNAdyenCseModule extends ReactContextBaseJavaModule {
                 .setCvc(cvc)
                 .setExpiryMonth(expiryMonth)
                 .setExpiryYear(expiryYear)
-                .setGenerationTime(new Date((long) timeStamp * 1000))
+                .setGenerationTime(new Date((long) timeStamp.longValue() * 1000))
                 .setNumber(number)
                 .build();
 
