@@ -4,17 +4,15 @@
 
 @implementation RNAdyenCse
 
-- (dispatch_queue_t)methodQueue
-{
+- (dispatch_queue_t)methodQueue{
     return dispatch_get_main_queue();
 }
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(encrypt:(NSString *)holderName number:(NSString *)number cvc:(NSString *)cvc expiryMonth:(NSString *)expiryMonth expiryYear:(NSString *)expiryYear publickey:(NSString *)publicKey resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
-{
+RCT_EXPORT_METHOD(encrypt:(NSString *)holderName number:(NSString *)number cvc:(NSString *)cvc expiryMonth:(NSString *)expiryMonth expiryYear:(NSString *)expiryYear timeStamp:(nonnull NSNumber *)timeStamp publickey:(NSString *)publicKey resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject){
     @try {
         ADYCard *card = [ADYCard new];
-        card.generationtime = [NSDate new];
+        card.generationtime = [NSDate dateWithTimeIntervalSince1970:[timeStamp doubleValue]];
         card.number = number;
         card.holderName = holderName;
         card.cvc = cvc;
@@ -31,4 +29,3 @@ RCT_EXPORT_METHOD(encrypt:(NSString *)holderName number:(NSString *)number cvc:(
 }
 
 @end
-  
