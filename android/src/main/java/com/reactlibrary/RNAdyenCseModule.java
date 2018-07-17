@@ -34,7 +34,7 @@ public class RNAdyenCseModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void encrypt(String holderName, String number, String cvc, String expiryMonth, String expiryYear,
-                        long timeStamp, String publicKey, Promise promise) {
+                        Double timeStamp, String publicKey, Promise promise) {
 
         Card card = new Card.Builder()
                 .setHolderName(holderName)
